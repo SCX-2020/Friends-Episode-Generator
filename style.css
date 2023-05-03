@@ -1,42 +1,45 @@
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #f2f2f2;
   font-family: Arial, sans-serif;
-  background-color: #F9DC5C;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #24416D;
+  color: #007bff;
 }
 
 button {
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  background-color: #24416D;
-  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #0069d9;
 }
 
 #episode-info {
-  margin-top: 3rem;
-  font-size: 1.2rem;
-  text-align: center;
+  margin-top: 20px;
+  text-align: left;
+  display: none;
+}
+
+#episode-info h2 {
+  color: #007bff;
+}
+
+#episode-info p {
+  margin-bottom: 10px;
+}
+
+#episode-info a {
+  color: #007bff;
 }
