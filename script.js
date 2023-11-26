@@ -2147,9 +2147,18 @@ const episodes = [
 const recommendBtn = document.getElementById("recommend-btn");
 const episodeInfo = document.getElementById("episode-info");
 
+let remainingEpisodes = [...episodes]; // 创建一个副本用于追踪剩余未选择的剧集
+
 recommendBtn.addEventListener("click", function() {
-  const randomIndex = Math.floor(Math.random() * episodes.length);
-  const recommendedEpisode = episodes[randomIndex];
+  if (remainingEpisodes.length === 0) {
+    remainingEpisodes = [...episodes]; // 所有剧集都被选中过一次后，重置列表
+  }
+
+  const randomIndex = Math.floor(Math.random() * remainingEpisodes.length);
+  const recommendedEpisode = remainingEpisodes[randomIndex];
+
+  // 从剩余列表中移除选中的剧集
+  remainingEpisodes.splice(randomIndex, 1);
 
   episodeInfo.innerHTML = `
     <h2>Recommended Episode: Season ${recommendedEpisode.season}, Episode ${recommendedEpisode.episode}</h2>
